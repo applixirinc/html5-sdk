@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #appprizes-overlay {
+        'background': 'transparent',
+        'position': 'absolute',
+        'width': '100%',
+        'height': '100%',
+        'z-index': 99999,
+        'top': 0,
+        'left': 0
+        }
+    </style>
+</head>
+<body>
+
+
+<div id="appprizes-overlay">
+    <div id='appprizes-screen' style='border: 5px solid #efe4b0;margin: -184px -314px;position:absolute;width: 640px; height: 360px; top: 50%; left: 50%;'>
+        <a id='appprizes-close' style='display: none;position: absolute;top: -22px;right: -22px;width: 35px;height: 35px;background: transparent url("//developer.appprizes.com/images/close.png");cursor: pointer;z-index: 99999;'></a>
+        <div id="mainContainer">
+            <div id="content">
+                <video id="contentElement">
+                </video>
+            </div>
+            <div id="adContainer"></div>
+        </div>
+        <div id="myProgress">
+            <div id="myBar">
+                <div id="label">0%</div>
+            </div>
+        </div>
+        <div id='appprizes-backup' style='display: none;width:300px;height:250px;background:transparent;position:relative;z-index: 999999;top:-380px;left:160px;'>
+    </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="applixir-frame-min.js"></script>
+
+</body>
+</html>
