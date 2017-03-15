@@ -1,0 +1,58 @@
+<html>
+  <head>
+    <title>Applixir HTML5 Simple Demo</title>
+    <script id="applixirBoot"
+            data-zone-id="1631"
+            data-user-id="0"
+            data-report-state="1"
+            data-applixir-cb="callback"
+            data-ima-debug="0"
+            data-iframe-src="index.player.min.html"
+            data-background-color="black"
+            data-top="50%"
+            data-left="50%"
+            data-transform="translate(-50%, -50%)"
+            src="Applixir.parent.min.js"></script>
+
+  </head>
+
+  <body style="background-color: #efe4b0">
+  <h1>Developer Edition</h1>
+
+  <button id="startVideo" disabled>Start Video</button>
+
+  <pre id="debug">
+
+  </pre>
+
+  <script>
+      var btn = document.getElementById('startVideo');
+      var dbg = document.getElementById('debug');
+
+      btn.onclick = function() {
+          window.Applixir.show(); //param is used for fallback settings
+      }
+
+      window.addEventListener("load", function () {
+          var events = ['ApplixirEventVideoReady', 'ApplixirEventBannerReady', 'ApplixirEventRequestBanner', 'ApplixirEventVideoNotFound', 'ApplixirEventVideoComplete', 'ApplixirEventVideoStart', 'ApplixirEventBannerStart', 'ApplixirEventUserClose', 'ApplixirEventBannerStop'];
+          for (var i = 0; i < events.length; i++) {
+              window.addEventListener(events[i], function (e) {
+                  document.getElementById('debug').innerHTML += "\n" + e.type + "\n";
+              });
+          }
+      });
+
+      window.addEventListener('ApplixirVastLoaded', function (e) {
+          btn.removeAttribute('disabled');
+
+          var txt = "Duration: " + window.Applixir.getDuration() + " \n AdType: " + window.Applixir.getType();
+          dbg.innerHTML = txt;
+
+      });
+
+
+
+  </script>
+
+  </body>
+</html>
