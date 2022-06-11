@@ -1,0 +1,1 @@
+All files for distribution now located in https://cdn.applixir.com
